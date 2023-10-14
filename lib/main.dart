@@ -1,55 +1,51 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MeraApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+class MeraApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'MY PORTFOLIO',
-      debugShowCheckedModeBanner: false,
+      title: 'My Portfolio',
       theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
+        textTheme: TextTheme(
+            displayLarge: TextStyle(
+                fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+            displayMedium: TextStyle(
+                fontWeight: FontWeight.normal,
+                fontSize: 12,
+                color: Colors.white)),
+        primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'MY PORTFOLIO'),
+      home: HomeScreen(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Flutter Portfolio"),
+      appBar: AppBar(
+        title: Center(
+          child: Text(
+            'PORTFOLIO',
+            style: Theme.of(context).textTheme.displayLarge,
+          ),
         ),
-        body: Center(
-            child: Container(
-                height: 200,
-                width: 200,
-                color: Colors.blueGrey,
-                child: Center(
-                  child: Text(
-                    "Welcome To My Portfolio...!!!!",
-                    style: TextStyle(
-                      color: Colors.black87,
-                      fontWeight: FontWeight.w700,
-                      fontStyle: FontStyle.italic,
-                    ),
-                  ),
-                ))));
+        backgroundColor: Colors.black,
+      ),
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        color: Colors.black87,
+        child: Text(
+          'Manas Srivastava',
+          style: Theme.of(context).textTheme.displayMedium,
+        ),
+      ),
+    );
   }
 }
