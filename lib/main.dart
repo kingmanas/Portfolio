@@ -9,10 +9,14 @@ class MeraApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'My Portfolio',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         textTheme: TextTheme(
             displayLarge: TextStyle(
-                fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+                fontSize: 35,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+                fontFamily: 'Font1'),
             displayMedium: TextStyle(
                 fontWeight: FontWeight.normal,
                 fontSize: 12,
@@ -28,22 +32,21 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black87,
       appBar: AppBar(
         title: Center(
           child: Text(
-            'PORTFOLIO',
+            'MY PORTFOLIO',
             style: Theme.of(context).textTheme.displayLarge,
           ),
         ),
         backgroundColor: Colors.black,
       ),
       body: Container(
-        height: double.infinity,
-        width: double.infinity,
-        color: Colors.black87,
-        child: Text(
-          'Manas Srivastava',
-          style: Theme.of(context).textTheme.displayMedium,
+        margin: EdgeInsets.only(left: 50, top: 50),
+        child: CircleAvatar(
+          backgroundImage: AssetImage('assets/images/Manas.jpg'),
+          radius: 150,
         ),
       ),
     );
