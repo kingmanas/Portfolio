@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:portfolio/Socials.dart';
 import 'package:portfolio/main.dart';
 
 class EducationDetails extends StatelessWidget {
@@ -51,13 +52,13 @@ class EducationDetails extends StatelessWidget {
                   },
                 ),
                 GButton(
-                  icon: Icons.favorite,
+                  icon: Icons.person,
                   text: 'Socials',
                   onPressed: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => HomeScreen(),
+                        builder: (context) => Socials(),
                       ),
                     );
                   },
