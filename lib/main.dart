@@ -43,6 +43,8 @@ class MeraApp extends StatelessWidget {
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var w = MediaQuery.of(context).size.width;
+    var h = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
@@ -116,8 +118,8 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 50,
-              width: 50,
+              height: h * 0.1,
+              width: w * 0.2,
             ),
             Container(
               child: Text(
@@ -128,12 +130,12 @@ class HomeScreen extends StatelessWidget {
             Container(
               child: Text(
                 "MANAS SRIVASTAVA",
-                style: Theme.of(context).textTheme.displayMedium,
+                style: Theme.of(context).textTheme.displayLarge,
               ),
             ),
             SizedBox(
-              height: 20,
-              width: 20,
+              height: h * 0.05,
+              width: w * 0.1,
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -161,8 +163,8 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 50,
-              width: 50,
+              height: h * 0.1,
+              width: w * 0.1,
             ),
             Column(
               children: [
